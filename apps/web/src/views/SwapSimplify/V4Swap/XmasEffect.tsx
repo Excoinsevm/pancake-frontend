@@ -128,6 +128,44 @@ export const Snowflake = styled.div`
     left: 90%;
     animation-delay: 3s, 1.5s;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    transition: none;
+
+    &:nth-of-type(1) {
+      top: 15%;
+      left: 5%;
+    }
+    &:nth-of-type(2) {
+      top: 35%;
+      left: 25%;
+    }
+    &:nth-of-type(3) {
+      top: 75%;
+      left: 15%;
+    }
+    &:nth-of-type(4) {
+      top: 45%;
+      left: 45%;
+    }
+    &:nth-of-type(5) {
+      top: 25%;
+      left: 65%;
+    }
+    &:nth-of-type(6) {
+      top: 85%;
+      left: 75%;
+    }
+    &:nth-of-type(7) {
+      top: 55%;
+      left: 85%;
+    }
+    &:nth-of-type(8) {
+      top: 65%;
+      left: 95%;
+    }
+  }
 `
 const generateRandomOpacityStyles = (count = 11) => {
   let styles = ''
