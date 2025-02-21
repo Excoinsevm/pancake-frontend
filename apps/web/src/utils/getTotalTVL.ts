@@ -8,6 +8,7 @@ import addresses from 'config/constants/contracts'
 import { bitQueryServerClient } from 'utils/graphql'
 import { CHAIN_IDS } from 'utils/wagmi'
 import { chainIdToExplorerInfoChainName, explorerApiClient } from 'state/info/api/client'
+import { FARMS_API } from 'config/constants/endpoints'
 
 // Values fetched from TheGraph and BitQuery jan 24, 2022
 const txCount = 54780336
@@ -80,7 +81,7 @@ export const getTotalTvl = async () => {
       ChainId.BSC,
     ])
 
-    const cake = await (await fetch('https://farms-api.pancakeswap.com/price/cake')).json()
+    const cake = await (await fetch(`${FARMS_API}/price/cake`)).json()
     const cakeVaultV2 = getCakeVaultAddress()
     const cakeContract = getCakeContract()
     const totalCakeInVault = await cakeContract.read.balanceOf([cakeVaultV2])
